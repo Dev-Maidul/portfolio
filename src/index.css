@@ -35,10 +35,11 @@ body {
 }
 
 /* Navbar */
-.navbar {
+.navbar1 {
   background-color: var(--color-card-bg);
   color: var(--color-text);
   padding: 1rem 2rem;
+  margin-left: 5px;
 }
 
 /* Cards */
@@ -93,3 +94,4 @@ input:focus, textarea:focus, select:focus {
   border-color: var(--color-primary);
   background-color: var(--color-card-bg);
 }
+
