@@ -9,6 +9,7 @@ import Experience from "../Pages/Experience";
 import Educations from "../Pages/Educations";
 import AboutMe from "../Pages/AboutMe";
 import Contact from "../Pages/Contact";
+import NotFoundPage from "../Components/NotFoundPage";
 
 export const router = createBrowserRouter([
   {
@@ -20,7 +21,7 @@ export const router = createBrowserRouter([
             Component: Home
         },
         {
-            path:'/projects',
+            path:'/projects',   
             Component:Projects,
         },
         {
@@ -45,5 +46,9 @@ export const router = createBrowserRouter([
         },
     ]
   },
+  {
+    path:'*',
+    Component:NotFoundPage
+  }
 ]);
 

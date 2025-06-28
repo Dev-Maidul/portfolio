@@ -1,0 +1,66 @@
+[
+ 
+  {
+    "id": 1,
+    "title": "Marathon Management System",
+    "image": "https://i.ibb.co/tpCLVfBm/hobby-hub-ef096-web-app.png",
+    "shortDescription": "A React-based web application for scheduling and managing doctor appointments, allowing users to browse profiles, book/cancel appointments, and visualize data.",
+    "mainFeatures": [
+      "Users can browse comprehensive doctor profiles and book or cancel their appointments seamlessly.",
+      "Real-time data visualization of appointment fees and statistics using Recharts.",
+      "User-specific booking management with data persistence via localStorage."
+    ],
+    "links": [
+      {
+        "name": "Live",
+        "url": "https://hobby-hub-ef096.web.app/"
+      },
+      {
+        "name": "GitHub",
+        "url": "https://i.ibb.co/6RS6qJJF/hobby-hubb-netlify-app-1.png"
+      }
+    ]
+  },
+   {
+    "id": 2,
+    "title": "HobbyHub",
+    "image": "https://i.ibb.co/3YQQM4Km/hobby-hubb-netlify-app-all-groups-1.png",
+    "shortDescription": "A platform where people can discover and join local hobby-based groups (e.g., book clubs, hiking crews) or create their own to build communities around their passions.",
+    "mainFeatures": [
+      "Users can discover, join, or create hobby-based groups in their local area.",
+      "Secure authentication system using Firebase with email/password, Google, and GitHub login.",
+      "Personalized user dashboard to view and manage created or joined groups."
+    ],
+    "links": [
+      {
+        "name": "Live",
+        "url": "https://hobby-hubb.netlify.app/"
+      },
+      {
+        "name": "GitHub",
+        "url": "https://github.com/Dev-Maidul/Hobby-hub-client"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Prescription Point",
+    "image": "https://i.ibb.co/wZgvgHqc/Prescription-point.png",
+    "shortDescription": "A React-based web application for scheduling and managing doctor appointments. The platform allows users to browse doctor profiles, book and cancel appointments, visualize booking data, and explore helpful resources through a blog. Built with interactivity, responsive design, and data persistence in mind.",
+    "mainFeatures": [
+      "Doctor Details Page",
+      "Doctor Booking based on Availability",
+      "Appointment page with Rechart"
+    ],
+    "links": [
+      {
+        "name": "Live",
+        "url": "https://prescription-point.netlify.app/"
+      },
+      {
+        "name": "GitHub",
+        "url": "https://github.com/Dev-Maidul/Prescription-point"
+      }
+    ]
+  }
+]
