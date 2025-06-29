@@ -49,10 +49,10 @@ const Footer = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      className="relative text-gray-400 pt-12 pb-8 px-4"
+      className="relative text-gray-400 pt-4 md:pt-12 sm:mb-2 md:pb-8 md:px-4  rounded-2xl"
     >
       <motion.div
-        className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-blue-500 via-purple-500 to-red-500"
+        className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-blue-500 via-purple-500 to-red-500  mt-10"
         initial={{ width: 0 }}
         whileInView={{ width: "100%" }}
         viewport={{ once: true }}
@@ -60,7 +60,7 @@ const Footer = () => {
       />
 
       <div className="container mx-auto flex flex-col items-center text-center">
-        <motion.h3 variants={itemVariants} className="text-3xl font-bold text-white mb-4">
+        <motion.h3 variants={itemVariants} className="text-3xl font-bold text-white mb-4 mt-8">
           Maidul Islam
         </motion.h3>
 

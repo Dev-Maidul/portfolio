@@ -40,32 +40,33 @@ const Banner = () => {
   }, []);
 
   return (
-    <section id="home" className="relative overflow-hidden">
+    <section id="home" className="relative overflow-hidden bg-gray-900 py-16 sm:py-20 lg:py-24 rounded-2xl">
       <DotGrid />
-      <div className="container relative z-10 flex flex-col justify-center min-h-screen px-4 py-8 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between items-center">
+      <div className="container relative z-10 flex flex-col-reverse lg:flex-row justify-between items-center gap-12 mx-auto px-4">
+        
         <motion.div
-          className="flex flex-col justify-center text-center rounded-sm lg:max-w-xl xl:max-w-2xl lg:text-left"
+          className="flex flex-col justify-center text-center lg:text-left max-w-2xl"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           <motion.h1
             variants={itemVariants}
-            className="text-4xl font-bold leading-tight sm:text-6xl bg-gradient-to-r from-blue-500 via-purple-500 to-red-500 animate-gradient"
+            className="text-4xl lg:text-6xl font-bold leading-tight bg-gradient-to-r from-blue-500 via-purple-500 to-red-500 animate-gradient"
           >
             Hi, This is Md Maidul Islam
           </motion.h1>
 
           <motion.p
             variants={itemVariants}
-            className="mt-6 mb-8 text-2xl sm:mb-12 text-gray-300"
+            className="mt-6 mb-8 text-xl lg:text-2xl text-gray-300"
           >
             Full Stack Web Developer
           </motion.p>
 
           <motion.div
             variants={itemVariants}
-            className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start"
+            className="flex flex-wrap items-center justify-center lg:justify-start gap-4"
           >
             <motion.a
               href="https://github.com/Dev-Maidul"
@@ -104,7 +105,7 @@ const Banner = () => {
         </motion.div>
 
         <motion.div
-          className="relative flex items-center justify-center p-2 mt-12 lg:mt-0 w-[280px] h-[380px] sm:w-[350px] sm:h-[450px] lg:w-[400px] lg:h-[500px]"
+          className="relative flex items-center justify-center w-[280px] h-[380px] sm:w-[350px] sm:h-[450px] lg:w-[400px] lg:h-[500px]"
           animate={{ y: ["0%", "-3%", "0%"] }}
           transition={{
             duration: 4,
@@ -113,9 +114,9 @@ const Banner = () => {
             repeatType: "reverse",
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-500 via-purple-500 to-red-500 rounded-2xl blur-lg opacity-50"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500 via-purple-500 to-red-500 rounded-2xl blur-xl opacity-40"></div>
           
-          <div className="relative w-full h-full p-2 bg-gray-900 rounded-2xl overflow-hidden">
+          <div className="relative w-full h-full p-2 bg-gray-900 rounded-2xl overflow-hidden shadow-2xl">
             <AnimatePresence mode="wait">
               <motion.img
                 key={imageIndex}

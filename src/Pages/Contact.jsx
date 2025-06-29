@@ -53,26 +53,26 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 sm:py-28 text-white mt-30 p-8 mb-10 rounded-xl">
+    <section id="contact" className="py-20 sm:py-0 text-white md:pt-20 md:mb-20">
       <Toaster position="top-center" reverseOrder={false} />
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto md:px-4">
         <motion.h2
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.1 }}
+          transition={{ duration: 0.5 }}
           className="text-4xl sm:text-5xl font-bold text-center mb-16"
         >
           Contact Me
         </motion.h2>
 
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-8 max-w-6xl mx-auto">
+        <div className="flex flex-col lg:flex-row gap-12 max-w-6xl mx-auto p-4 md:p-8 bg-gray-800/50 rounded-xl border border-gray-700">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             variants={containerVariants}
-            className="flex-1 p-8 bg-gray-800 rounded-lg border border-gray-700"
+            className="flex-1"
           >
             <motion.h3
               variants={itemVariants}
@@ -80,25 +80,25 @@ const Contact = () => {
             >
               Contact Information
             </motion.h3>
-            <motion.div variants={itemVariants} className="space-y-5 text-lg">
+            <motion.div variants={itemVariants} className="space-y-5 text-base sm:text-lg">
               <p className="flex items-center gap-4">
-                <FaEnvelope className="text-blue-400" />
-                <a href="mailto:maidulislammanik8991@gmail.com" className="hover:text-blue-300">
+                <FaEnvelope className="text-blue-400 flex-shrink-0" />
+                <a href="mailto:maidulislammanik8991@gmail.com" className="hover:text-blue-300 break-all">
                   maidulislammanik8991@gmail.com
                 </a>
               </p>
               <p className="flex items-center gap-4">
-                <FaPhoneAlt className="text-blue-400" />
+                <FaPhoneAlt className="text-blue-400 flex-shrink-0" />
                 <a href="tel:+8813161750176" className="hover:text-blue-300">+8813161750176</a>
               </p>
               <p className="flex items-center gap-4">
-                <FaWhatsapp className="text-blue-400" />
+                <FaWhatsapp className="text-blue-400 flex-shrink-0" />
                 <a href="https://wa.me/8801792887606" target="_blank" rel="noopener noreferrer" className="hover:text-blue-300">
                   +8801792887606
                 </a>
               </p>
               <p className="flex items-center gap-4">
-                <FaMapMarkerAlt className="text-blue-400" />
+                <FaMapMarkerAlt className="text-blue-400 flex-shrink-0" />
                 <span>Beijing, China</span>
               </p>
             </motion.div>

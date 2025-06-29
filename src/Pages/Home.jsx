@@ -9,7 +9,7 @@ import Educations from './Educations';
 
 const Home = () => {
     return (
-        <div className='w-10/12 mx-auto'>
+        <div className=''>
             <Banner></Banner>
             <Projects></Projects>
             <Skills></Skills>

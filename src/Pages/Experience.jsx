@@ -61,20 +61,21 @@ const itemVariants = {
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-20 sm:py-28 text-white rounded-xl mt-30">
+    <section id="experience" className="py-20 sm:py-28 text-white">
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.1 }}
+          transition={{ duration: 0.5 }}
           className="text-4xl sm:text-5xl font-bold text-center mb-20"
         >
           My Experience
         </motion.h2>
 
         <div className="relative max-w-4xl mx-auto">
-          <div className="absolute left-4 sm:left-1/2 w-1 bg-gray-700 h-full -translate-x-1/2"></div>
+          {/* Vertical Timeline Bar */}
+          <div className="absolute left-6 sm:left-1/2 w-1 bg-gray-700 h-full -translate-x-1/2"></div>
           
           <motion.div
             initial="hidden"
@@ -83,55 +84,62 @@ const Experience = () => {
             variants={containerVariants}
             className="space-y-16"
           >
-            {experiences.map((exp, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                className="relative p-6 sm:p-8 bg-gray-800 rounded-lg border-2 border-gray-700 shadow-lg ml-10 sm:ml-0"
-              >
-                <div className="absolute top-8 -left-[3.2rem] sm:left-1/2 w-8 h-8 bg-cyan-400 rounded-full border-4 border-gray-900 -translate-x-1/2 flex items-center justify-center text-gray-900">
-                  {exp.icon}
-                </div>
-
-                <div className="flex flex-col sm:flex-row justify-between sm:items-center mb-2">
-                  <h3 className="text-2xl font-bold text-white">{exp.role}</h3>
-                  <span className="text-cyan-400 font-semibold mt-1 sm:mt-0">
-                    {exp.duration}
-                  </span>
-                </div>
-
-                <div className="flex flex-col sm:flex-row text-gray-400 text-sm gap-x-6 gap-y-1 mb-4">
-                  <div className="flex items-center gap-2">
-                    <FaBuilding />
-                    <span>{exp.company}</span>
+            {experiences.map((exp, index) => {
+              const isLeft = index % 2 === 0;
+              return (
+                <motion.div
+                  key={index}
+                  variants={itemVariants}
+                  className={`relative flex items-center ${isLeft ? 'sm:justify-start' : 'sm:justify-end'}`}
+                >
+                  {/* Dot on the timeline */}
+                  <div className={`absolute left-6 sm:left-1/2 w-8 h-8 bg-cyan-400 rounded-full border-4 border-gray-900 -translate-x-1/2 flex items-center justify-center text-gray-900 z-10`}>
+                    {exp.icon}
                   </div>
-                  <div className="flex items-center gap-2">
-                    <FaMapMarkerAlt />
-                    <span>{exp.location}</span>
+
+                  {/* Experience Card */}
+                  <div className={`relative p-4 sm:p-6 bg-gray-800 rounded-lg border-2 border-gray-700 shadow-lg ml-12 w-full sm:w-5/12 ${isLeft ? 'sm:ml-0 sm:mr-auto' : 'sm:mr-0 sm:ml-auto'}`}>
+                    <div className={`flex flex-col sm:flex-row justify-between sm:items-center mb-2`}>
+                      <h3 className="text-xl sm:text-2xl font-bold text-white">{exp.role}</h3>
+                      <span className="text-cyan-400 font-semibold text-sm sm:text-base mt-1 sm:mt-0 text-left sm:text-right">
+                        {exp.duration}
+                      </span>
+                    </div>
+
+                    <div className="flex flex-col sm:flex-row text-gray-400 text-sm gap-x-6 gap-y-1 mb-4">
+                      <div className="flex items-center gap-2">
+                        <FaBuilding />
+                        <span>{exp.company}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <FaMapMarkerAlt />
+                        <span>{exp.location}</span>
+                      </div>
+                    </div>
+
+                    <p className="text-gray-300 leading-relaxed mb-6">
+                      {exp.description}
+                    </p>
+
+                    <div>
+                      <h4 className="text-lg font-semibold mb-3 text-cyan-300">
+                        {exp.role.includes("Teaching")
+                          ? "Key Responsibilities"
+                          : "Key Achievements"}
+                      </h4>
+                      <ul className="space-y-2">
+                        {exp.points.map((point, i) => (
+                          <li key={i} className="flex items-start gap-3">
+                            <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
+                            <span>{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
-                </div>
-
-                <p className="text-gray-300 leading-relaxed mb-6">
-                  {exp.description}
-                </p>
-
-                <div>
-                  <h4 className="text-lg font-semibold mb-3 text-cyan-300">
-                    {exp.role.includes("Teaching")
-                      ? "Key Responsibilities"
-                      : "Key Achievements"}
-                  </h4>
-                  <ul className="space-y-2">
-                    {exp.points.map((point, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
-                        <span>{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </motion.div>
         </div>
       </div>

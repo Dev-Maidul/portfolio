@@ -45,8 +45,8 @@ const imageVariants = {
 
 const AboutMe = () => {
   return (
-    <section id="about" className="py-20 sm:py-28 text-white">
-      <div className="container mx-auto px-4">
+    <section id="about" className="py-20 sm:py-0 text-white">
+      <div className="container mx-auto md:px-4">
         <motion.h2
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}

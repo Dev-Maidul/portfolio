@@ -15,8 +15,9 @@ const navLinks = [
 ];
 
 const mobileMenuVariants = {
-  hidden: { x: "-100%", transition: { type: "tween", duration: 0.3 } },
-  visible: { x: "0%", transition: { type: "tween", duration: 0.3 } },
+  hidden: { opacity: 0, y: -20 },
+  visible: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -20, transition: { duration: 0.2 } },
 };
 
 const Navbar = () => {
@@ -28,7 +29,7 @@ const Navbar = () => {
   }, [location]);
 
   return (
-    <header className=" backdrop-blur-md  z-50">
+    <header className="relative bg-gray-900 z-50 rounded-2xl mb-10">
       <div className="container mx-auto flex justify-between items-center p-4">
         <div className="flex-shrink-0">
           <NavLink to="/">
@@ -40,6 +41,7 @@ const Navbar = () => {
           </NavLink>
         </div>
 
+        {/* Desktop Menu */}
         <ul className="hidden lg:flex items-center space-x-8 font-semibold text-gray-300">
           {navLinks.map(({ to, label }) => (
             <li key={to} className="relative">
@@ -63,6 +65,7 @@ const Navbar = () => {
           ))}
         </ul>
 
+        {/* Desktop Resume Button */}
         <div className="hidden lg:flex">
           <a
             href="/Maidul_Islam_Resume.pdf"
@@ -79,45 +82,50 @@ const Navbar = () => {
           </a>
         </div>
 
+        {/* Mobile Menu Toggle */}
         <div className="lg:hidden">
-          <button onClick={() => setMobileMenuOpen(true)} aria-label="Open menu">
-            <FaBars className="w-6 h-6 text-white" />
+          <button onClick={() => setMobileMenuOpen((prev) => !prev)} aria-label="Toggle menu">
+            {mobileMenuOpen ? (
+              <FaTimes className="w-6 h-6 text-white" />
+            ) : (
+              <FaBars className="w-6 h-6 text-white" />
+            )}
           </button>
         </div>
       </div>
 
+      {/* Mobile Dropdown Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            className="fixed inset-0 bg-gray-900/95 backdrop-blur-lg z-50 lg:hidden"
+            className="lg:hidden absolute top-full left-0 w-full bg-gray-800 shadow-xl"
             variants={mobileMenuVariants}
             initial="hidden"
             animate="visible"
             exit="hidden"
           >
-            <div className="flex justify-end p-6">
-              <button onClick={() => setMobileMenuOpen(false)} aria-label="Close menu">
-                <FaTimes className="w-7 h-7 text-white" />
-              </button>
-            </div>
-            <ul className="flex flex-col items-center justify-center h-full space-y-8 font-bold text-2xl text-gray-300">
+            <ul className="flex flex-col p-4">
               {navLinks.map(({ to, label }) => (
                 <li key={to}>
                   <NavLink
                     to={to}
                     className={({ isActive }) =>
-                      isActive ? "text-white" : "hover:text-white"
+                      `block text-center py-3 rounded-md transition-colors ${
+                        isActive
+                          ? "text-white bg-blue-600"
+                          : "text-gray-300 hover:bg-gray-700"
+                      }`
                     }
                   >
                     {label}
                   </NavLink>
                 </li>
               ))}
-              <li className="mt-8">
+              <li className="mt-4 pt-4 border-t border-gray-700">
                 <a
                   href="/Maidul_Islam_Resume.pdf"
                   download
-                  className="text-lg text-white border border-white px-6 py-3 rounded-lg"
+                  className="block text-center py-3 text-white bg-blue-600 rounded-lg"
                 >
                   Download Resume
                 </a>
