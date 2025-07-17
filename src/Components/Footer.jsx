@@ -9,9 +9,9 @@ const footerVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.8,
+      duration: 0.6, // Faster duration
       ease: "easeOut",
-      staggerChildren: 0.2,
+      staggerChildren: 0.15, // Faster stagger
     },
   },
 };
@@ -49,22 +49,14 @@ const Footer = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      className="relative text-gray-400 pt-4 md:pt-12 sm:mb-2 md:pb-8 md:px-4  rounded-2xl"
+      className="relative bg-gray-900 text-gray-400 pt-12 pb-8 px-4 z-40"
     >
-      <motion.div
-        className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-blue-500 via-purple-500 to-red-500  mt-10"
-        initial={{ width: 0 }}
-        whileInView={{ width: "100%" }}
-        viewport={{ once: true }}
-        transition={{ duration: 1, ease: "easeInOut" }}
-      />
-
       <div className="container mx-auto flex flex-col items-center text-center">
-        <motion.h3 variants={itemVariants} className="text-3xl font-bold text-white mb-4 mt-8">
+        <motion.h3 variants={itemVariants} className="text-3xl font-bold text-white mb-4">
           Maidul Islam
         </motion.h3>
 
-        <motion.ul variants={itemVariants} className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-6">
+        <motion.ul variants={itemVariants} className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-3">
           {navLinks.map((navLink, index) => (
             <li key={index}>
               <Link
@@ -79,7 +71,7 @@ const Footer = () => {
           ))}
         </motion.ul>
 
-        <motion.div variants={itemVariants} className="flex justify-center gap-8 mb-8">
+        <motion.div variants={itemVariants} className="flex justify-center gap-8 mb-3">
           {socialLinks.map((social, index) => (
             <motion.a
               key={index}
@@ -96,7 +88,35 @@ const Footer = () => {
 
         <motion.div
           variants={itemVariants}
-          className="text-sm border-dashed border-t-2 border-gray-700 w-full pt-8"
+          className="w-full max-w-lg my-3"
+        >
+          <motion.svg width="100%" height="3" initial="hidden" whileInView="visible" viewport={{ once: true }}>
+            <defs>
+              <linearGradient id="gradient-border" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#1e87f0" />
+                <stop offset="50%" stopColor="#8e44ad" />
+                <stop offset="100%" stopColor="#c0392b" />
+              </linearGradient>
+            </defs>
+            <motion.line
+              x1="0"
+              y1="1.5"
+              x2="100%"
+              y2="1.5"
+              stroke="url(#gradient-border)"
+              strokeWidth="3"
+              strokeDasharray="10 10"
+              variants={{
+                hidden: { pathLength: 0 },
+                visible: { pathLength: 1, transition: { duration: 1.2, ease: "easeInOut" } } // Faster duration
+              }}
+            />
+          </motion.svg>
+        </motion.div>
+
+        <motion.div
+          variants={itemVariants}
+          className="text-sm w-full"
         >
           <p>&copy; {new Date().getFullYear()} Maidul Islam. All rights reserved.</p>
         </motion.div>

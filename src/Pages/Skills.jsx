@@ -53,7 +53,7 @@ const Skills = () => {
   const iconSize = isMobile ? 45 : 80;
 
   return (
-    <section id="skills" className="py-20 sm:py-28 text-white overflow-hidden">
+    <section id="skills" className="py-8 text-white overflow-hidden">
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: -50 }}

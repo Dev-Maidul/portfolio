@@ -9,14 +9,16 @@ import Educations from './Educations';
 
 const Home = () => {
     return (
-        <div className=''>
+        <div className='overflow-hidden'>
             <Banner></Banner>
-            <Projects></Projects>
+            <div className='w-full px-4 md:w-11/12 mx-auto md:px-0'>
+                <Projects></Projects>
             <Skills></Skills>
             <Educations></Educations>
             <Experience></Experience>
             <AboutMe></AboutMe>
             <Contact></Contact>
+            </div>
         </div>
     );
 };

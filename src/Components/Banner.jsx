@@ -4,13 +4,15 @@ import DotGrid from "./Animation/DotGrid";
 import bannerImage1 from "../assets/banner1.jpg";
 import bannerImage2 from "../assets/banner2.jpg";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { SiCodeforces } from "react-icons/si";
+import { Typewriter } from "react-simple-typewriter";
 
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.1,
     },
   },
 };
@@ -21,7 +23,7 @@ const itemVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.5,
+      duration: 0.2,
     },
   },
 };
@@ -34,40 +36,50 @@ const Banner = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section id="home" className="relative overflow-hidden bg-gray-900 py-16 sm:py-20 lg:py-24 rounded-2xl">
+    <section id="home" className="relative overflow-hidden bg-gray-900 py-16 sm:py-0 lg:py-24 md:mt-12 my-12">
       <DotGrid />
-      <div className="container relative z-10 flex flex-col-reverse lg:flex-row justify-between items-center gap-12 mx-auto px-4">
+      <div className="container relative z-10 mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 px-4 sm:px-6 lg:px-8">
         
+        {/* Left Side: Content (Text and Buttons) */}
         <motion.div
-          className="flex flex-col justify-center text-center lg:text-left max-w-2xl"
+          className="flex flex-col justify-center text-center lg:text-left w-full lg:w-1/2"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           <motion.h1
             variants={itemVariants}
-            className="text-4xl lg:text-6xl font-bold leading-tight bg-gradient-to-r from-blue-500 via-purple-500 to-red-500 animate-gradient"
+            className="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-red-500 animate-gradient whitespace-nowrap"
           >
-            Hi, This is Md Maidul Islam
+            Hi, This is <br /> Md Maidul Islam
           </motion.h1>
 
           <motion.p
             variants={itemVariants}
-            className="mt-6 mb-8 text-xl lg:text-2xl text-gray-300"
+            className="mt-6 mb-8 text-xl lg:text-2xl text-gray-300 min-h-[32px]"
           >
-            Full Stack Web Developer
+            <Typewriter
+              words={['Full Stack Web Developer and Problem Solver']}
+              loop={0}
+              cursor
+              cursorStyle="_"
+              typeSpeed={80}
+              deleteSpeed={50}
+              delaySpeed={2000}
+            />
           </motion.p>
 
           <motion.div
             variants={itemVariants}
             className="flex flex-wrap items-center justify-center lg:justify-start gap-4"
           >
+            {/* GitHub Button */}
             <motion.a
               href="https://github.com/Dev-Maidul"
               target="_blank"
@@ -85,6 +97,7 @@ const Banner = () => {
               </span>
             </motion.a>
 
+            {/* LinkedIn Button */}
             <motion.a
               href="https://www.linkedin.com/in/md-maidul-islam-3744b21ba/"
               target="_blank"
@@ -101,22 +114,39 @@ const Banner = () => {
                 </span>
               </span>
             </motion.a>
+
+            {/* Codeforces Button */}
+            <motion.a
+              href="https://codeforces.com/profile/Maidul"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative p-0.5 inline-flex items-center justify-center font-bold overflow-hidden group rounded-md cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <span className="w-full h-full bg-gradient-to-br from-[#4A90E2] via-[#D0021B] to-[#F5A623] group-hover:from-[#F5A623] group-hover:via-[#D0021B] group-hover:to-[#4A90E2] absolute"></span>
+              <span className="relative px-6 py-3 transition-all ease-out bg-gray-900 rounded-md group-hover:bg-opacity-0 duration-400">
+                <span className="relative text-white flex items-center gap-2">
+                  <SiCodeforces size={20} />
+                  Codeforces
+                </span>
+              </span>
+            </motion.a>
           </motion.div>
         </motion.div>
 
+        {/* Right Side: Full Image Content */}
         <motion.div
-          className="relative flex items-center justify-center w-[280px] h-[380px] sm:w-[350px] sm:h-[450px] lg:w-[400px] lg:h-[500px]"
+          className="w-full lg:w-1/2 flex items-center justify-center"
           animate={{ y: ["0%", "-3%", "0%"] }}
           transition={{
-            duration: 4,
+            duration: 2,
             ease: "easeInOut",
             repeat: Infinity,
             repeatType: "reverse",
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-500 via-purple-500 to-red-500 rounded-2xl blur-xl opacity-40"></div>
-          
-          <div className="relative w-full h-full p-2 bg-gray-900 rounded-2xl overflow-hidden shadow-2xl">
+          <div className="relative w-full h-[380px] sm:h-[450px] lg:h-[500px] p-2 bg-gray-900 rounded-2xl overflow-hidden shadow-2xl">
             <AnimatePresence mode="wait">
               <motion.img
                 key={imageIndex}
@@ -126,7 +156,7 @@ const Banner = () => {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.8, ease: "easeInOut" }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
               />
             </AnimatePresence>
           </div>

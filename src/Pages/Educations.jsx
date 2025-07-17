@@ -22,18 +22,17 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.3,
+      staggerChildren: 0.15, // Faster stagger
+      delayChildren: 0.2, // Shorter delay
     },
   },
 };
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4 } }, // Faster duration
 };
 
-// A small component to wrap icons with animation and gradient
 const AnimatedGradientIcon = ({ children }) => (
   <motion.div
     whileHover={{ scale: 1.2, rotate: 5 }}
@@ -58,7 +57,6 @@ const Educations = () => {
         </motion.h2>
 
         <div className="relative max-w-4xl mx-auto">
-          {/* Vertical Timeline Bar */}
           <div className="absolute left-6 top-2 w-1 bg-gray-700 h-full -translate-x-1/2"></div>
           
           <motion.div
@@ -68,12 +66,11 @@ const Educations = () => {
             variants={containerVariants}
             className="relative p-4 sm:p-8 bg-gray-800 rounded-lg border border-gray-700 shadow-lg ml-12"
           >
-            {/* The dot on the timeline with animation */}
             <div className="absolute top-8 -left-[3.5rem] w-8 h-8 rounded-full border-4 border-gray-900 -translate-x-1/2 flex items-center justify-center">
               <motion.div
                 className="w-full h-full rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center"
                 animate={{ scale: [1, 1.2, 1], boxShadow: ["0 0 0px #8e44ad", "0 0 15px #8e44ad", "0 0 0px #8e44ad"] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
               >
                 <FaGraduationCap className="text-white" size={16} />
               </motion.div>

@@ -45,17 +45,17 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.4,
+      staggerChildren: 0.2, // Faster stagger
     },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, x: -50 },
+  hidden: { opacity: 0, x: -30 },
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.5 },
+    transition: { duration: 0.4 }, // Faster duration
   },
 };
 
@@ -74,7 +74,6 @@ const Experience = () => {
         </motion.h2>
 
         <div className="relative max-w-4xl mx-auto">
-          {/* Vertical Timeline Bar */}
           <div className="absolute left-6 sm:left-1/2 w-1 bg-gray-700 h-full -translate-x-1/2"></div>
           
           <motion.div
@@ -92,12 +91,10 @@ const Experience = () => {
                   variants={itemVariants}
                   className={`relative flex items-center ${isLeft ? 'sm:justify-start' : 'sm:justify-end'}`}
                 >
-                  {/* Dot on the timeline */}
                   <div className={`absolute left-6 sm:left-1/2 w-8 h-8 bg-cyan-400 rounded-full border-4 border-gray-900 -translate-x-1/2 flex items-center justify-center text-gray-900 z-10`}>
                     {exp.icon}
                   </div>
 
-                  {/* Experience Card */}
                   <div className={`relative p-4 sm:p-6 bg-gray-800 rounded-lg border-2 border-gray-700 shadow-lg ml-12 w-full sm:w-5/12 ${isLeft ? 'sm:ml-0 sm:mr-auto' : 'sm:mr-0 sm:ml-auto'}`}>
                     <div className={`flex flex-col sm:flex-row justify-between sm:items-center mb-2`}>
                       <h3 className="text-xl sm:text-2xl font-bold text-white">{exp.role}</h3>

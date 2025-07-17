@@ -5,34 +5,76 @@
     <link rel="icon" type="image/svg+xml" href="/src/assets/Fav.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Maidul.devs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap" rel="stylesheet">
     <style>
+      html, body {
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        color: #e0e0e0;
+        font-family: "Urbanist", sans-serif;
+      }
       #gradient {
-        width: 200px;
-        height: 200px;
+        width: 80px;
+        height: 80px;
         pointer-events: none;
-        box-shadow: 0 0 100px 1px #c68efd;
-        background: radial-gradient(#c68efd, #c68efd30);
-        z-index: 10;
-        position: absolute;
-        border-radius: 100px;
-        opacity: 50%;
+        box-shadow: 0 0 60px 20px rgba(255, 255, 255, 0.15);
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+        z-index: 5;
+        position: fixed;
+        border-radius: 50%;
+        opacity: 0.3;
+        left: 50vw;
+        top: 50vh;
+        transform: translate(-50%, -50%);
+        transition: left 0.2s ease-out, top 0.2s ease-out;
+      }
+      .font-urbanist {
+        font-family: "Urbanist", sans-serif;
+      }
+      .active {
+        background: linear-gradient(135deg, #ff8a05, #ff5478, #ff00c6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+      }
+      .animate-gradient {
+        background-size: 300%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: gradient-animation 3s ease-in-out infinite;
+      }
+      @keyframes gradient-animation {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      @media (max-width: 640px) {
+        #gradient {
+          width: 60px;
+          height: 60px;
+          box-shadow: 0 0 40px 15px rgba(255, 255, 255, 0.1);
+        }
       }
     </style>
   </head>
-  <body class="bg-gradient-bg text-text font-urbanist min-h-screen">
+  <body class="font-urbanist">
     <div id="root"></div>
-    <div id="gradient" class="gradient ">
-    </div> 
+    <div id="gradient"></div>
     <script type="module" src="/src/main.jsx"></script>
-
-    <!-- mouse event script -->
     <script>
       const gradient = document.getElementById("gradient");
       document.addEventListener("mousemove", (e) => {
         const mouseX = e.clientX;
         const mouseY = e.clientY;
-        gradient.style.left = `${mouseX - 100}px`;
-        gradient.style.top = `${mouseY - 100}px`;
+        gradient.style.left = `${mouseX}px`;
+        gradient.style.top = `${mouseY}px`;
       });
     </script>
   </body>
