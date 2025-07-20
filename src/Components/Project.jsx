@@ -46,7 +46,7 @@ const Project = ({ project, index }) => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      className="py-16"
+      className="py-16 w-10/12 mx-auto"
     >
       <div className={`flex flex-col ${directionClass} gap-12 items-center`}>
         <motion.div variants={imageVariants} className="flex-1 w-full">

@@ -12,6 +12,7 @@ import {
 const courses = [
   "Programming Fundamentals",
   "Data Structures & Algorithms",
+  "Object Oriented Programming",
   "Web Development",
   "Database Systems",
   "Software Engineering Principles",

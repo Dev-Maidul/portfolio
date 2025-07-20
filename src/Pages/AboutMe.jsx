@@ -3,18 +3,23 @@ import { motion } from "framer-motion";
 import aboutImage from "../assets/banner2.jpg"; // আপনার ছবিটি assets ফোল্ডারে রেখে পাথটি ঠিক করে নিন
 
 const skills = [
-  "HTML",
-  "CSS",
+  "HTML5",
+  "CSS3",
   "Tailwind CSS",
+  "Dom Manipulation",
   "JavaScript",
   "React",
+  "Next JS",
   "React Router",
   "Firebase",
   "MongoDB",
+  "SQL",
   "Express.js",
   "Node.js",
   "JWT",
-  "TypeScript",
+  "Django",
+  "GitHub Collaboration",
+  
 ];
 
 const containerVariants = {

@@ -1,6 +1,28 @@
 [
  
   {
+    "id": 0,
+    "title": "PropertyPulse",
+    "image": "https://i.ibb.co/N2T57b2T/Property-pulse.png",
+    "shortDescription": "PropertyPulse is a React-based web application for Manage a Real estate Business Platform where A user can browse property,buy property,review,add wishlist,make payment,can offer price.Then A agent can see offer,sell property,add property,update,also can reject the offer.On the other hand,Admin can manage everything,make fraud,delete property,user,make advertisement and so on",
+    "mainFeatures": [
+      "Role-Based Dashboard & Access Control.Three distinct user roles: User, Agent, Admin.Each role gets a custom dashboard and can only access features relevant to their role.Admin/Agent routes are protected on the backend with middleware, ensuring security and data integrity.",
+      "Reporting, Moderation, and Fraud Detection: Users can report properties (with modal, description, and auto-link to admin dashboard).Admins can view all reported properties and remove them (including all reviews).Fraud detection: Admins can mark agents as fraud, which disables their ability to add properties and removes their listings.",
+      "Secure, Real Payment Integration: Stripe payment integration for secure, real-world property transactions.Payment status and transaction IDs are tracked and shown in the dashboard.Only verified offers can be paid for, ensuring a safe buying process.",
+      "Modern, Interactive UI with Analytics: Live charts and statistics (using Recharts) for agents to visualize their sales.Animated, responsive UI with Swiper sliders, Framer Motion, and custom modals.Latest reviews, advertised properties, and extra sections make the homepage dynamic and engaging."
+    ],
+    "links": [
+      {
+        "name": "Live",
+        "url": "https://pro-fast-curier.web.app/"
+      },
+      {
+        "name": "GitHub",
+        "url": "https://github.com/Programming-Hero-Web-Course4/b11a12-client-side-Dev-Maidul"
+      }
+    ]
+  },
+  {
     "id": 1,
     "title": "Marathon Management System",
     "image": "https://i.ibb.co/sXbM9N6/hobby-hub-ef096-web-app.png",

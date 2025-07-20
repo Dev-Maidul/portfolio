@@ -4,7 +4,7 @@ import DotGrid from "./Animation/DotGrid";
 import bannerImage1 from "../assets/banner1.jpg";
 import bannerImage2 from "../assets/banner2.jpg";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { SiCodeforces } from "react-icons/si";
+import { SiCodeforces, SiLeetcode } from "react-icons/si"; // LeetCode icon imported
 import { Typewriter } from "react-simple-typewriter";
 
 const containerVariants = {
@@ -42,7 +42,7 @@ const Banner = () => {
   }, []);
 
   return (
-    <section id="home" className="relative overflow-hidden bg-gray-900 py-16 sm:py-0 lg:py-24 md:mt-12 my-12">
+    <section id="home" className="relative overflow-hidden  py-16 sm:py-0 lg:py-24 md:mt-12 my-12">
       <DotGrid />
       <div className="container relative z-10 mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 px-4 sm:px-6 lg:px-8">
         
@@ -129,6 +129,24 @@ const Banner = () => {
                 <span className="relative text-white flex items-center gap-2">
                   <SiCodeforces size={20} />
                   Codeforces
+                </span>
+              </span>
+            </motion.a>
+            
+            {/* LeetCode Button */}
+            <motion.a
+              href="https://leetcode.com/u/maidulislammanik8991/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative p-0.5 inline-flex items-center justify-center font-bold overflow-hidden group rounded-md cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <span className="w-full h-full bg-gradient-to-br from-[#FFA116] via-[#F29500] to-[#111111] group-hover:from-[#111111] group-hover:via-[#F29500] group-hover:to-[#FFA116] absolute"></span>
+              <span className="relative px-6 py-3 transition-all ease-out bg-gray-900 rounded-md group-hover:bg-opacity-0 duration-400">
+                <span className="relative text-white flex items-center gap-2">
+                  <SiLeetcode size={20} />
+                  LeetCode
                 </span>
               </span>
             </motion.a>

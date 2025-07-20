@@ -1,7 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
-import { FaGithub, FaLinkedin, FaArrowUp } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaArrowUp, FaYoutube } from "react-icons/fa";
+import { SiCodeforces, SiLeetcode } from "react-icons/si";
 
 const footerVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -9,9 +10,9 @@ const footerVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.6, // Faster duration
+      duration: 0.6,
       ease: "easeOut",
-      staggerChildren: 0.15, // Faster stagger
+      staggerChildren: 0.15,
     },
   },
 };
@@ -32,6 +33,21 @@ const socialLinks = [
     icon: <FaLinkedin />,
     url: "https://www.linkedin.com/in/md-maidul-islam-3744b21ba/",
   },
+  {
+    name: "YouTube",
+    icon: <FaYoutube />,
+    url: "https://www.youtube.com/watch?v=5ybL99W9Bfk&list=PL-weXfnSsDpwMiW9SaIhspMfgSkoYIaFu",
+  },
+  {
+    name: "Codeforces",
+    icon: <SiCodeforces />,
+    url: "https://codeforces.com/profile/Maidul",
+  },
+  {
+    name: "LeetCode",
+    icon: <SiLeetcode />,
+    url: "https://leetcode.com/u/maidulislammanik8991/",
+  },
 ];
 
 const navLinks = [
@@ -49,14 +65,14 @@ const Footer = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      className="relative bg-gray-900 text-gray-400 pt-12 pb-8 px-4 z-40"
+      className="relative bg-nebula text-gray-400 pt-12 pb-8 px-4 z-40"
     >
       <div className="container mx-auto flex flex-col items-center text-center">
         <motion.h3 variants={itemVariants} className="text-3xl font-bold text-white mb-4">
           Maidul Islam
         </motion.h3>
 
-        <motion.ul variants={itemVariants} className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-3">
+        <motion.ul variants={itemVariants} className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-6">
           {navLinks.map((navLink, index) => (
             <li key={index}>
               <Link
@@ -71,7 +87,7 @@ const Footer = () => {
           ))}
         </motion.ul>
 
-        <motion.div variants={itemVariants} className="flex justify-center gap-8 mb-3">
+        <motion.div variants={itemVariants} className="flex justify-center gap-8 mb-6">
           {socialLinks.map((social, index) => (
             <motion.a
               key={index}
@@ -80,6 +96,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="text-2xl hover:text-white hover:scale-125 transition-all duration-300"
               whileHover={{ y: -5 }}
+              title={social.name}
             >
               {social.icon}
             </motion.a>
@@ -88,7 +105,7 @@ const Footer = () => {
 
         <motion.div
           variants={itemVariants}
-          className="w-full max-w-lg my-3"
+          className="w-full max-w-lg my-6"
         >
           <motion.svg width="100%" height="3" initial="hidden" whileInView="visible" viewport={{ once: true }}>
             <defs>
@@ -108,7 +125,7 @@ const Footer = () => {
               strokeDasharray="10 10"
               variants={{
                 hidden: { pathLength: 0 },
-                visible: { pathLength: 1, transition: { duration: 1.2, ease: "easeInOut" } } // Faster duration
+                visible: { pathLength: 1, transition: { duration: 1.2, ease: "easeInOut" } }
               }}
             />
           </motion.svg>

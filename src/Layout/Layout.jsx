@@ -1,17 +1,17 @@
 import React from 'react';
 import Navbar from '../Components/Navbar';
-import { Outlet } from 'react-router';
 import Footer from '../Components/Footer';
+import { Outlet } from 'react-router';
 
 const Layout = () => {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-bg text-text font-urbanist">
-      <Navbar />
+      <Navbar className="bg-nebula" />
       {/* No container here! */}
       <main className="flex-1">
         <Outlet />
       </main>
-      <Footer />
+       <Footer className="bg-nebula" />
     </div>
   );
 };

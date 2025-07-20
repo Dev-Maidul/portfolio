@@ -36,7 +36,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="relative bg-gray-900 z-50 w-full">
+    <header className="relative bg-nebula  z-50 w-full">
       <div className="container mx-auto flex justify-between items-center p-4 sticky top-0">
         <div className="flex-shrink-0">
           <NavLink to="/">
@@ -85,7 +85,7 @@ const Navbar = () => {
             <span className="relative px-5 py-2.5 transition-all ease-out bg-gray-900 rounded-md group-hover:bg-opacity-0 duration-400">
               <span className="relative text-white flex items-center gap-2">
                 <FaYoutube />
-                YouTube
+                Problem Solving
               </span>
             </span>
           </a>
@@ -150,7 +150,7 @@ const Navbar = () => {
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 text-center py-3 text-white bg-red-600 rounded-lg"
                 >
-                  <FaYoutube /> YouTube Channel
+                  <FaYoutube /> Problem Solving
                 </a>
                 <a
                   href={RESUME_LINK}

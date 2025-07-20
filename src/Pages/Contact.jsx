@@ -89,7 +89,7 @@ const Contact = () => {
               </p>
               <p className="flex items-center gap-4">
                 <FaPhoneAlt className="text-blue-400 flex-shrink-0" />
-                <a href="tel:+8813161750176" className="hover:text-blue-300">+8813161750176</a>
+                <a href="tel:+8613161750176" className="hover:text-blue-300">+8613161750176</a>
               </p>
               <p className="flex items-center gap-4">
                 <FaWhatsapp className="text-blue-400 flex-shrink-0" />
