@@ -10,6 +10,7 @@ import Educations from "../Pages/Educations";
 import AboutMe from "../Pages/AboutMe";
 import Contact from "../Pages/Contact";
 import NotFoundPage from "../Components/NotFoundPage";
+import ProjectDetail from "../Pages/ProjectDetail";
 
 export const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ export const router = createBrowserRouter([
             path:'/projects',   
             Component:Projects,
         },
+         {
+        path: "/project/:id", 
+        element: <ProjectDetail />,
+      },
         {
             path: '/skills',
             Component:Skills

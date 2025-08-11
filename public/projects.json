@@ -1,88 +1,58 @@
 [
- 
   {
     "id": 0,
-    "title": "PropertyPulse",
+    "name": "PropertyPulse",
+    "thumbnail": "https://i.ibb.co/dqkLs8p/Screenshot-2025-08-11-at-8-06-00-PM.png",
     "image": "https://i.ibb.co/N2T57b2T/Property-pulse.png",
-    "shortDescription": "PropertyPulse is a React-based web application for Manage a Real estate Business Platform where A user can browse property,buy property,review,add wishlist,make payment,can offer price.Then A agent can see offer,sell property,add property,update,also can reject the offer.On the other hand,Admin can manage everything,make fraud,delete property,user,make advertisement and so on",
-    "mainFeatures": [
-      "Role-Based Dashboard & Access Control.Three distinct user roles: User, Agent, Admin.Each role gets a custom dashboard and can only access features relevant to their role.Admin/Agent routes are protected on the backend with middleware, ensuring security and data integrity.",
-      "Reporting, Moderation, and Fraud Detection: Users can report properties (with modal, description, and auto-link to admin dashboard).Admins can view all reported properties and remove them (including all reviews).Fraud detection: Admins can mark agents as fraud, which disables their ability to add properties and removes their listings.",
-      "Secure, Real Payment Integration: Stripe payment integration for secure, real-world property transactions.Payment status and transaction IDs are tracked and shown in the dashboard.Only verified offers can be paid for, ensuring a safe buying process.",
-      "Modern, Interactive UI with Analytics: Live charts and statistics (using Recharts) for agents to visualize their sales.Animated, responsive UI with Swiper sliders, Framer Motion, and custom modals.Latest reviews, advertised properties, and extra sections make the homepage dynamic and engaging."
-    ],
-    "links": [
-      {
-        "name": "Live",
-        "url": "https://pro-fast-curier.web.app/"
-      },
-      {
-        "name": "GitHub",
-        "url": "https://github.com/Dev-Maidul/PropertyPulse-client"
-      }
-    ]
+    "description": "A comprehensive real estate platform with role-based access for users, agents, and admins. Features include property listings, wishlists, offers, secure payments with Stripe, and robust admin moderation tools.",
+    "techStack": ["React", "Node.js", "Express.js", "MongoDB", "Firebase", "Stripe", "JWT", "Tailwind CSS"],
+    "links": {
+      "live": "https://pro-fast-curier.web.app/",
+      "client": "https://github.com/Dev-Maidul/PropertyPulse-client"
+    },
+    "challenges": "Implementing the role-based (User, Agent, Admin) access control securely across both frontend and backend was a major challenge. Ensuring data integrity and protecting routes required careful middleware design.",
+    "futurePlans": "Future enhancements include a real-time chat system for agent-user communication, advanced property search filters (e.g., map view), and deploying the application on a more scalable cloud infrastructure."
   },
   {
     "id": 1,
-    "title": "Marathon Management System",
+    "name": "Marathon Management System",
+    "thumbnail": "https://i.ibb.co/PzjbW1Rt/Screenshot-2025-08-11-at-7-59-48-PM.png",
     "image": "https://i.ibb.co/sXbM9N6/hobby-hub-ef096-web-app.png",
-    "shortDescription": "A React-based web application for scheduling and managing doctor appointments, allowing users to browse profiles, book/cancel appointments, and visualize data.",
-    "mainFeatures": [
-      "Users can browse comprehensive doctor profiles and book or cancel their appointments seamlessly.",
-      "Real-time data visualization of appointment fees and statistics using Recharts.",
-      "User-specific booking management with data persistence via localStorage."
-    ],
-    "links": [
-      {
-        "name": "Live",
-        "url": "https://hobby-hub-ef096.web.app/"
-      },
-      {
-        "name": "GitHub",
-        "url": "https://github.com/Dev-Maidul/Marathon-Management-client"
-      }
-    ]
+    "description": "An event management platform focused on marathons. Users can register for events, view race details, and track their participation history. Organizers can manage events, participants, and view analytics.",
+    "techStack": ["React", "Firebase", "React Router", "Tailwind CSS", "Framer Motion"],
+    "links": {
+      "live": "https://hobby-hub-ef096.web.app/",
+      "client": "https://github.com/Dev-Maidul/Marathon-Management-client"
+    },
+    "challenges": "The main challenge was designing a database schema in Firebase that could efficiently handle relationships between users, events, and registrations while ensuring fast query performance.",
+    "futurePlans": "I plan to add features like live participant tracking on a map during a race, integration with fitness apps to import user data, and a certificate generation system for finishers."
   },
-   {
+  {
     "id": 2,
-    "title": "HobbyHub",
+    "name": "HobbyHub",
+    "thumbnail": "https://i.ibb.co/rRhPpy1N/Screenshot-2025-08-11-at-7-50-06-PM.png",
     "image": "https://i.ibb.co/3YQQM4Km/hobby-hubb-netlify-app-all-groups-1.png",
-    "shortDescription": "A platform where people can discover and join local hobby-based groups (e.g., book clubs, hiking crews) or create their own to build communities around their passions.",
-    "mainFeatures": [
-      "Users can discover, join, or create hobby-based groups in their local area.",
-      "Secure authentication system using Firebase with email/password, Google, and GitHub login.",
-      "Personalized user dashboard to view and manage created or joined groups."
-    ],
-    "links": [
-      {
-        "name": "Live",
-        "url": "https://hobby-hubb.netlify.app/"
-      },
-      {
-        "name": "GitHub",
-        "url": "https://github.com/Dev-Maidul/Hobby-hub-client"
-      }
-    ]
+    "description": "A social platform where people can discover, join, or create local hobby-based groups (e.g., book clubs, hiking crews) to build communities around their shared passions.",
+    "techStack": ["React", "Node.js", "Express.js", "MongoDB", "Firebase Auth", "Lottie React"],
+    "links": {
+      "live": "https://hobby-hubb.netlify.app/",
+      "client": "https://github.com/Dev-Maidul/Hobby-hub-client"
+    },
+    "challenges": "Creating an intuitive user experience for group creation and management was challenging. It required careful planning of the UI/UX to make the process seamless for non-technical users.",
+    "futurePlans": "Future goals include implementing an event calendar for groups, adding a photo-sharing feature for group activities, and developing a recommendation engine to suggest groups based on user interests."
   },
   {
     "id": 3,
-    "title": "Prescription Point",
+    "name": "Prescription Point",
+    "thumbnail": "https://i.ibb.co/qLFS6zmq/Screenshot-2025-08-11-at-8-00-24-PM.png",
     "image": "https://i.ibb.co/wZgvgHqc/Prescription-point.png",
-    "shortDescription": "A React-based web application for scheduling and managing doctor appointments. The platform allows users to browse doctor profiles, book and cancel appointments, visualize booking data, and explore helpful resources through a blog. Built with interactivity, responsive design, and data persistence in mind.",
-    "mainFeatures": [
-      "Doctor Details Page",
-      "Doctor Booking based on Availability",
-      "Appointment page with Rechart"
-    ],
-    "links": [
-      {
-        "name": "Live",
-        "url": "https://prescription-point.netlify.app/"
-      },
-      {
-        "name": "GitHub",
-        "url": "https://github.com/Dev-Maidul/Prescription-point"
-      }
-    ]
+    "description": "A React-based web application for scheduling and managing doctor appointments. It allows users to browse doctor profiles, book/cancel appointments, and visualize booking data.",
+    "techStack": ["React", "React Router", "Tailwind CSS", "DaisyUI", "Recharts", "localStorage"],
+    "links": {
+      "live": "https://prescription-point.netlify.app/",
+      "client": "https://github.com/Dev-Maidul/Prescription-point"
+    },
+    "challenges": "Managing appointment state locally and ensuring data persistence with localStorage was a key challenge. Implementing Recharts for real-time data visualization after cancellations also required careful state management.",
+    "futurePlans": "I plan to migrate the state management from localStorage to a proper backend with a database to allow user accounts and cross-device access. Adding doctor reviews and ratings is also a future goal."
   }
 ]
