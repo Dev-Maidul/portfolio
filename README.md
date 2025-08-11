@@ -12,20 +12,20 @@
 
 <br />
 
-Welcome to the official repository for my personal portfolio website. This project showcases my journey as a MERN Stack Developer, highlighting my skills, projects, and experiences. Built with modern technologies, it features a clean design, smooth animations, and a user-friendly interface.
+Welcome to the official repository for my personal portfolio website. This project showcases my journey as a MERN Stack Developer, highlighting my skills, projects, and experiences. Built with modern technologies like React and Framer Motion, it features a clean design, smooth animations, and a user-friendly interface to effectively present my work.
 
 ---
 
 ## 🚀 Features
 
--   **Interactive UI:** Smooth animations and transitions using **Framer Motion** for an engaging user experience.
--   **Dynamic Sections:** Detailed sections for About Me, Skills, Experience, Education, and Projects.
--   **Circular Skills Carousel:** An eye-catching circular gallery to display my technical skills.
--   **Project Showcase:** A dedicated section to feature my key projects with descriptions and links.
--   **Functional Contact Form:** An integrated contact form using **EmailJS** for direct communication.
--   **Responsive Design:** Fully responsive layout ensuring a seamless experience on all devices, from mobile to desktop.
--   **Live Resume Download:** A dedicated button to download my resume directly.
--   **Unique 404 Page:** A custom-designed, tech-themed 404 error page.
+-   **Dynamic & Interactive UI:** Smooth animations and transitions using **Framer Motion** for an engaging user experience.
+-   **Animated Banner:** Features a captivating banner with an auto-playing YouTube video, animated gradient text, and interactive social links.
+-   **Circular Skills Carousel:** An eye-catching circular gallery to display my technical skills in a rotating, interactive format.
+-   **Detailed Project Showcase:** A dedicated section with project cards leading to detailed pages for each project, outlining the tech stack, challenges, and future plans.
+-   **Functional Contact Form:** An integrated contact form using **EmailJS** for direct and secure communication without a dedicated backend.
+-   **Fully Responsive Design:** A seamless and visually appealing experience across all devices, from mobile phones to desktops.
+-   **Live Resume Download:** A dedicated button in the navigation bar to download my resume directly.
+-   **Unique 404 Page:** A custom-designed, tech-themed 404 error page with a terminal-like aesthetic.
 
 ---
 
@@ -49,12 +49,12 @@ To run this project locally, follow these steps:
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
+    git clone [https://github.com/your-username/your-portfolio-repo.git](https://github.com/your-username/your-portfolio-repo.git)
     ```
 
 2.  **Navigate to the project directory:**
     ```bash
-    cd your-repo-name
+    cd your-portfolio-repo
     ```
 
 3.  **Install dependencies:**
